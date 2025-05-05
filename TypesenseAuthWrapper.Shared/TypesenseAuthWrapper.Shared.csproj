@@ -1,0 +1,9 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+    <ItemGroup>
+        <PackageReference Include="AspNetCore.HealthChecks.UI.Client"/>
+        <PackageReference Include="MassTransit.AspNetCore"/>
+    </ItemGroup>
+
+    <ItemGroup>
+    </ItemGroup>
+</Project>

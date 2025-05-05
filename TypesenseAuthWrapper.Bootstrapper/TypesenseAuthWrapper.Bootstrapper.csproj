@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+    <PropertyGroup>
+        <!--Example secret-->
+        <UserSecretsId>51b12ff7-72f0-47f3-9b11-d8f0def28b09</UserSecretsId>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer"/>
+        <PackageReference Include="Microsoft.AspNetCore.OpenApi"/>
+        <PackageReference Include="Serilog.AspNetCore"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Swashbuckle.AspNetCore.Swagger"/>
+        <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI"/>
+        <PackageReference Include="Amazon.Extensions.Configuration.SystemsManager"/>
+        <PackageReference Include="AWSSDK.SimpleSystemsManagement"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\TypesenseAuthWrapper.Shared\TypesenseAuthWrapper.Shared.csproj"/>
+    </ItemGroup>
+
+</Project>

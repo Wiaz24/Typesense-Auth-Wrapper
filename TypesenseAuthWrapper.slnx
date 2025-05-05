@@ -1,0 +1,10 @@
+﻿<Solution>
+  <Folder Name="/Solution items/">
+    <File Path=".editorconfig" />
+    <File Path="Directory.Build.props" />
+    <File Path="Directory.Packages.props" />
+    <File Path="docker-compose.yaml" />
+  </Folder>
+  <Project Path="TypesenseAuthWrapper.Bootstrapper\TypesenseAuthWrapper.Bootstrapper.csproj" Type="Classic C#" />
+  <Project Path="TypesenseAuthWrapper.Shared\TypesenseAuthWrapper.Shared.csproj" Type="Classic C#" />
+</Solution>

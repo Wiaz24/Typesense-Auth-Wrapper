@@ -1,0 +1,24 @@
+root = true
+
+# All files
+[*]
+indent_style = space
+indent_size = 4
+tab_width = 4
+
+# C# files
+[*.cs]
+
+#### Core EditorConfig Options ####
+
+# Indentation and spacing
+indent_size = 4
+tab_width = 4
+
+# New line preferences
+end_of_line = lf
+insert_final_newline = false
+
+resharper_possible_null_reference_exception_highlighting=error
+resharper_member_can_be_private_global_highlighting=hint
+resharper_convert_to_primary_constructor_highlighting=none
