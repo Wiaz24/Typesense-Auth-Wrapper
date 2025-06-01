@@ -2,6 +2,7 @@
     <PropertyGroup>
         <!--Example secret-->
         <UserSecretsId>51b12ff7-72f0-47f3-9b11-d8f0def28b09</UserSecretsId>
+        <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
     </PropertyGroup>
 
     <ItemGroup>
@@ -19,6 +20,12 @@
 
     <ItemGroup>
         <ProjectReference Include="..\TypesenseAuthWrapper.Shared\TypesenseAuthWrapper.Shared.csproj"/>
+    </ItemGroup>
+
+    <ItemGroup>
+      <Content Include="..\.dockerignore">
+        <Link>.dockerignore</Link>
+      </Content>
     </ItemGroup>
 
 </Project>

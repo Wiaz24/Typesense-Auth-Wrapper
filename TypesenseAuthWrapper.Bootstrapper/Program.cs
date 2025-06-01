@@ -5,6 +5,7 @@ using TypesenseAuthWrapper.Bootstrapper.Exceptions;
 using TypesenseAuthWrapper.Bootstrapper.Logging;
 using TypesenseAuthWrapper.Bootstrapper.OpenApi;
 using TypesenseAuthWrapper.Bootstrapper.SystemsManager;
+using TypesenseAuthWrapper.Bootstrapper.TypesenseMiddleware;
 using TypesenseAuthWrapper.Shared;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -15,12 +16,13 @@ builder.Services.AddControllers()
     .AddJsonOptions(options =>
         options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter()));
 builder.Services.AddShared();
-builder.Services.AddAuth();
+builder.Services.AddAuth(builder.Configuration);
 builder.Services.AddHttpClient();
 builder.Services.AddCustomCors(builder.Configuration);
 builder.Services.AddOpenApi(options => options.UseOpenIdConnectAuthentication(builder.Configuration));
 builder.Services.AddProblemDetails();
 builder.Services.AddTransient<CustomExceptionHandler>();
+builder.Services.AddTypesense();
 
 var app = builder.Build();
 app.UseCustomCors();
@@ -29,5 +31,5 @@ app.UseMiddleware<CustomExceptionHandler>();
 app.UseShared();
 app.UseStaticFiles("/api/typesenseauthwrapper");
 app.MapCustomOpenApi();
-app.MapControllers();
+app.UseMiddleware<TypesenseMiddleware>();
 app.Run();

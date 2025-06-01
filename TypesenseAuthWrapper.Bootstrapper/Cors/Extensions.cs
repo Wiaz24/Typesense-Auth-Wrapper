@@ -14,10 +14,9 @@ public static class Extensions
             options => options.AddPolicy(
                 PolicyName,
                 policy => policy
-                    .WithOrigins(allowedHosts)
+                    .AllowAnyOrigin()
                     .AllowAnyMethod()
                     .AllowAnyHeader()
-                    .AllowCredentials()
             ));
 
         return services;
